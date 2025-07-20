@@ -1,0 +1,32 @@
+<h1>Contactez-nous</h1>
+
+<p>📍 Adresse : 2 Rue Montcalm, Gatineau, QC J8X 4B4</p>
+<p>🏳️‍🌈 Établissement ouvert à la communauté LGBTQ+</p>
+<p>🕒 Heure d’arrivée : 16 h 00<br>
+🕛 Heure de départ : 12 h 00</p>
+
+<p>📧 Site web en cours de construction</p>
+
+<p>Voici notre localisation :</p>
+
+<div id="map" style="height: 400px; width: 100%;"></div>
+
+<script>
+  function initMap() {
+    const location = { lat: 45.4285, lng: -75.7169 }; // ← Approx. pour 2 Rue Montcalm
+    const map = new google.maps.Map(document.getElementById("map"), {
+      zoom: 16,
+      center: location,
+    });
+    new google.maps.Marker({
+      position: location,
+      map: map,
+    });
+  }
+</script>
+
+<script async
+  src="https://maps.googleapis.com/maps/api/js?key=TA_CLE_API&callback=initMap">
+</script>
+
+<a href="/">← Retour à l’accueil</a>
