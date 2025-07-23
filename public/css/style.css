@@ -1,0 +1,161 @@
+/* === VARIABLES === */
+:root {
+  --beige: #f5f0e6;
+  --blanc-casse: #fcf9f3;
+  --marron: #4e3d2a;
+  --beige-foncé: #e9dcc5;
+}
+
+/* === RESET === */
+body {
+  margin: 0;
+  font-family: 'Cormorant Garamond', serif;
+  background-color: var(--blanc-casse);
+  color: var(--marron);
+}
+
+/* === HERO SECTION === */
+.hero {
+  background-image: url('/images/hotel/1.png');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+}
+
+/* === OVERLAY FONCÉ POUR MIEUX LIRE LE TEXTE === */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 0;
+}
+
+/* === NAVBAR === */
+.navbar {
+  background-color: var(--beige-foncé);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  border-radius: 0 0 20px 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.hotel-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  font-weight: bold;
+  color: var(--marron);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a,
+.lang-switch button {
+  text-decoration: none;
+  background: transparent;
+  color: var(--marron);
+  font-weight: 600;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.nav-links a:hover,
+.lang-switch button:hover {
+  color: #222;
+  transform: scale(1.05);
+}
+
+/* === HERO CONTENT === */
+.hero-content {
+  z-index: 2;
+  position: relative;
+  color: white;
+  padding: 40px;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
+  max-width: 900px;
+  margin: auto;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1.4s ease-out forwards;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Remonter le titre */
+.hero-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 40px; /* un peu plus d’espace en bas */
+}
+
+/* Supprimer complètement le texte du milieu */
+.hero-content p {
+  display: none;
+}
+
+/* === BOUTONS HERO === */
+.hero-buttons {
+  margin-top: 40px; /* ça descend les boutons */
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 12px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  border: 2px solid white;
+  background-color: transparent;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: white;
+  color: var(--marron);
+}
+
+/* === ANIMATION === */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .hero {
+    height: 90vh;
+  }
+}

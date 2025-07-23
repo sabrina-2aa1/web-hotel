@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require('express');
 const exphbs = require('express-handlebars');
 const path = require('path');
@@ -26,7 +28,10 @@ app.get('/chambres', (req, res) => {
 });
 
 app.get('/contact', (req, res) => {
-  res.render('contact', { title: 'Contact' });
+  res.render('contact', { 
+    title: 'Contact',
+    googleMapsKey: process.env.GOOGLE_MAPS_API_KEY
+  });
 });
 
 app.get('/apropos', (req, res) => {
